@@ -1,0 +1,13 @@
+name: Grype
+on: push
+jobs:
+    grype:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Build a Docker image
+        run: docker build -t myimage .
+      - name: Scan image
+        uses: anchore/scan-action@v2
+        with:
+         image: "myimage"
