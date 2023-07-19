@@ -1,1 +1,1 @@
-FROM debian-slim
+FROM debian/12-slim
